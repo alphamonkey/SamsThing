@@ -10,46 +10,53 @@ import UIKit
 import MessageUI
 
 class SendToSamActivity: UIActivity {
-    var items:[URL]? = []
+    
+    // This is force-unwrapped on purpose, because we can count on Safari to pass a valid URL.
+    var url:URL?
+    
     override class var activityCategory:UIActivityCategory {
-        get {
-            return .share
-        }
+        // Determines whether the icon appears in top or bottom row.  Valid choices are .share and .action
+        return .share
     }
+    
     override var activityViewController: UIViewController? {
+        // Create and populate mail compose view controller.
         let msg = MFMailComposeViewController()
         msg.setToRecipients(["srking@gmail.com"])
         msg.setSubject("Message to sam")
-        msg.setMessageBody(items!.first!.absoluteString, isHTML: true)
+        
+        if let url = url {
+            msg.setMessageBody(url.absoluteString, isHTML: true)
+        }
+        
         return msg
     }
     
     override var activityTitle: String? {
-        get {
-            return "Send To Sam"
-        }
+        // This is the label for the activity
+        return "Send To Sam"
     }
+    
     override var activityImage: UIImage? {
+        // Put an image here
         return nil
     }
-    override func prepare(withActivityItems activityItems: [Any]) {
-        self.items = [activityItems.first as! URL]
-        
-    }
-
     
-    func validActivityItems(activityItems: [AnyObject]) -> [AnyObject] {
-        return activityItems.filter {
-            if let _ = $0 as? URL  {
-                return true
-            }
-            
-            return false
-        }
-    }
+
 
     override func canPerform(withActivityItems activityItems: [Any]) -> Bool {
-        return validActivityItems(activityItems: activityItems as [AnyObject]).count > 0
+
+        // Make sure that the item we've received is actually a URL, if so, save it.
+        
+        if let url = activityItems.first as? URL {
+            self.url = url
+            return true
+        }
+            
+        else {
+            return false
+        }
+        
     }
     
 
