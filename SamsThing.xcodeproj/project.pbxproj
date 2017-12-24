@@ -12,6 +12,8 @@
 		BC3F3BB71FE9F46700BE5A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3F3BB51FE9F46700BE5A6D /* Main.storyboard */; };
 		BC3F3BB91FE9F46700BE5A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3F3BB81FE9F46700BE5A6D /* Assets.xcassets */; };
 		BC3F3BBC1FE9F46700BE5A6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3F3BBA1FE9F46700BE5A6D /* LaunchScreen.storyboard */; };
+		BC3F3BC51FE9F50F00BE5A6D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC3F3BC41FE9F50F00BE5A6D /* WebKit.framework */; };
+		BC5696821FF023B30048780A /* SendToSamActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5696811FF023B30048780A /* SendToSamActivity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		BC3F3BB81FE9F46700BE5A6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC3F3BBB1FE9F46700BE5A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC3F3BBD1FE9F46700BE5A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC3F3BC41FE9F50F00BE5A6D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		BC5696811FF023B30048780A /* SendToSamActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToSamActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC3F3BC51FE9F50F00BE5A6D /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,7 @@
 			children = (
 				BC3F3BB01FE9F46700BE5A6D /* SamsThing */,
 				BC3F3BAF1FE9F46700BE5A6D /* Products */,
+				BC3F3BC31FE9F50E00BE5A6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				BC3F3BB11FE9F46700BE5A6D /* AppDelegate.swift */,
+				BC5696811FF023B30048780A /* SendToSamActivity.swift */,
 				BC3F3BB31FE9F46700BE5A6D /* ViewController.swift */,
 				BC3F3BB51FE9F46700BE5A6D /* Main.storyboard */,
 				BC3F3BB81FE9F46700BE5A6D /* Assets.xcassets */,
@@ -62,6 +69,14 @@
 				BC3F3BBD1FE9F46700BE5A6D /* Info.plist */,
 			);
 			path = SamsThing;
+			sourceTree = "<group>";
+		};
+		BC3F3BC31FE9F50E00BE5A6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC3F3BC41FE9F50F00BE5A6D /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +153,7 @@
 			files = (
 				BC3F3BB41FE9F46700BE5A6D /* ViewController.swift in Sources */,
 				BC3F3BB21FE9F46700BE5A6D /* AppDelegate.swift in Sources */,
+				BC5696821FF023B30048780A /* SendToSamActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
