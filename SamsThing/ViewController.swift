@@ -10,12 +10,8 @@ import UIKit
 import SafariServices
 class ViewController: UIViewController {
     var safari:SFSafariViewController!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    override func viewDidAppear(_ animated: Bool) {
+    
+    override func viewWillAppear(_ animated: Bool) {
         if let url = URL(string: "http://www.amazon.com") {
     
             safari = SFSafariViewController(url: url)
@@ -25,18 +21,12 @@ class ViewController: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
 
 extension ViewController:SFSafariViewControllerDelegate {
     func safariViewController(_ controller: SFSafariViewController, activityItemsFor URL: URL, title: String?) -> [UIActivity] {
-
-
         return [SendToSamActivity()]
     }
 
