@@ -11,7 +11,7 @@ import SafariServices
 class ViewController: UIViewController {
     var safari:SFSafariViewController!
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         if let url = URL(string: "http://www.amazon.com") {
     
             safari = SFSafariViewController(url: url)
